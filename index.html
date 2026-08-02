@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Throat · §27+ · the Seal gains a voice</title>
+<meta name="description" content="A Seal (deck → signature → chord) gains transmission across the fold-rate ladder: it announces itself on sound/radio/light, recognizes kin/complementary/clash by ear, reproduces at a distance, and hears its own shadow. Same organism, now with a voice.">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#0a0b12">
+<style>
+  :root{
+    --bg:#0a0b12; --panel:#12131d; --panel2:#181a28; --border:#242637; --ink:#eae7f2; --dim:#8b89a3;
+    --gold:#e0b23a; --violet:#b79bff; --blue:#6fb0ff; --teal:#4fd0c0; --amber:#e8a86b; --red:#e77b6b; --green:#6fce8f; --peach:#f1a37a;
+    --serif:Georgia,'Times New Roman',serif; --sans:system-ui,-apple-system,'Segoe UI',sans-serif; --mono:ui-monospace,'SFMono-Regular','DM Mono',Menlo,monospace;
+  }
+  @media (prefers-color-scheme:light){ :root{ --bg:#f5f3ec; --panel:#fff; --panel2:#f0ece1; --border:#e2ddce; --ink:#191720; --dim:#77738a; --gold:#b8860b; } }
+  :root[data-theme=dark]{ --bg:#0a0b12; --panel:#12131d; --panel2:#181a28; --border:#242637; --ink:#eae7f2; --dim:#8b89a3; --gold:#e0b23a; }
+  :root[data-theme=light]{ --bg:#f5f3ec; --panel:#fff; --panel2:#f0ece1; --border:#e2ddce; --ink:#191720; --dim:#77738a; --gold:#b8860b; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font:15px/1.6 var(--sans);-webkit-font-smoothing:antialiased;min-height:100dvh;padding:26px 18px 60px}
+  .wrap{max-width:960px;margin:0 auto}
+  header{text-align:center;margin:8px 0 24px}
+  .glyph{font-family:var(--serif);font-size:44px;color:var(--gold);line-height:1}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(30px,6vw,50px);letter-spacing:-.02em;margin:8px 0 4px}
+  h1 em{color:var(--gold);font-style:italic}
+  .sub{color:var(--dim);max-width:640px;margin:8px auto 0;font-size:15px}
+  .sub b{color:var(--ink)}
+  section{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:20px;margin-top:16px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:640px){ .grid2{grid-template-columns:1fr} }
+  .seal-editor h3{font-family:var(--serif);font-size:19px;display:flex;justify-content:space-between;align-items:center;gap:9px;margin-bottom:8px}
+  .seal-editor h3 .sig{font-family:var(--mono);font-size:11px;color:var(--dim);font-weight:400}
+  textarea{width:100%;height:110px;font-family:var(--mono);font-size:13px;padding:11px;border-radius:10px;border:1px solid var(--border);background:var(--panel2);color:var(--ink);resize:vertical;line-height:1.55}
+  textarea:focus{outline:none;border-color:var(--gold)}
+  .presets{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .presets span{font-family:var(--mono);font-size:11px;padding:5px 10px;border-radius:16px;border:1px solid var(--border);background:var(--panel2);color:var(--dim);cursor:pointer;transition:.12s}
+  .presets span:hover{border-color:var(--gold);color:var(--ink)}
+  .chord-svg{width:100%;height:120px;margin-top:12px}
+  .bar{fill:var(--gold)} .bar.dead{fill:var(--red)} .bar.dim{opacity:.35}
+  .axis-label{font-family:var(--mono);font-size:10px;fill:var(--dim);text-anchor:middle}
+  .axis-amp{font-family:var(--mono);font-size:9px;fill:var(--dim);text-anchor:middle}
+
+  .verdict{display:flex;align-items:center;justify-content:center;gap:14px;padding:16px;border-radius:12px;background:var(--panel2);border:1px solid var(--border);margin-top:12px}
+  .verdict .v{font-family:var(--serif);font-size:26px;letter-spacing:.02em}
+  .verdict .m{font-family:var(--mono);font-size:12px;color:var(--dim)}
+  .v.kin{color:var(--green)} .v.complementary{color:var(--gold)} .v.clash{color:var(--red)} .v.distant{color:var(--dim)}
+
+  .rungs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
+  .rung{background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px}
+  .rung h4{font-family:var(--serif);font-size:17px;display:flex;align-items:center;gap:8px}
+  .rung .dot{width:10px;height:10px;border-radius:50%;flex:none}
+  .rung .meta{font-family:var(--mono);font-size:10.5px;color:var(--dim);margin-top:-4px}
+  .rung .carrier{font-family:var(--mono);font-size:10.5px;color:var(--dim);word-break:break-word;min-height:26px;line-height:1.5}
+  .rung .lamp{height:38px;border-radius:8px;border:1px solid var(--border);background:#04050b;transition:background .02s,box-shadow .02s}
+  button{font-family:var(--sans);font-weight:700;font-size:13px;padding:11px 14px;border-radius:10px;border:1px solid var(--border);background:var(--panel);color:var(--ink);cursor:pointer;transition:.14s}
+  button:hover{border-color:var(--gold);color:var(--gold)}
+  button.big{background:var(--gold);color:#0a0b12;border-color:var(--gold);padding:12px 18px}
+  button.big:hover{background:var(--amber);color:#0a0b12}
+  .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px}
+  .proof{font-family:var(--mono);font-size:12px;padding:8px 12px;border-radius:9px;border:1px solid var(--green);color:var(--green)}
+  .proof.bad{border-color:var(--red);color:var(--red)}
+  .proof b{color:inherit}
+  .diag{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;align-items:baseline;margin-top:14px;font-family:var(--mono);font-size:13px}
+  .diag .k{color:var(--dim)} .diag .v{color:var(--ink)}
+  .flag{background:var(--panel2);border:1px solid var(--red);color:var(--red);border-radius:9px;padding:8px 12px;margin-top:8px;font-family:var(--mono);font-size:12px}
+  .flag.ok{border-color:var(--green);color:var(--green)}
+  footer{text-align:center;color:var(--dim);font-family:var(--mono);font-size:11px;margin-top:32px;line-height:1.8}
+  footer a{color:var(--gold);text-decoration:none} footer a:hover{text-decoration:underline}
+  .themebtn{position:fixed;top:14px;right:14px;width:38px;height:38px;border-radius:10px;border:1px solid var(--border);background:var(--panel);color:var(--ink);cursor:pointer;font-size:16px}
+  .note{color:var(--gold)}
+</style>
+</head>
+<body>
+<button class="themebtn" id="theme" title="Toggle theme">◐</button>
+<div class="wrap">
+  <header>
+    <div class="glyph">喉</div>
+    <h1>The <em>Throat</em></h1>
+    <p class="sub">The Seal could <b>be</b>, <b>act</b>, <b>verify</b>, <b>remember</b> and <b>reproduce</b> — but not <b>speak</b>. §27+ wires the fold-rate ladder into the organism: a Seal <b>announces</b> its chord on any rung, <b>recognizes</b> kin/complementary/clash by ear, <b>reproduces at a distance</b>, and <b>hears its own shadow</b>. Same organism, now with a voice.</p>
+  </header>
+
+  <section>
+    <div class="eyebrow">§1 · two seals · deck → signature → chord</div>
+    <div class="grid2">
+      <div class="seal-editor" id="editorA"></div>
+      <div class="seal-editor" id="editorB"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">§2 · recognize — by ear, no lookup</div>
+    <div class="verdict" id="verdict"><div class="v">—</div><div class="m">—</div></div>
+    <p class="sub" style="margin-top:12px;font-size:13px"><b>kin</b> = broadly the same spectrum · <b>complementary</b> = each loud where the other is quiet (a fuller chord together) · <b>clash</b> = compete for a shared loud note without blending · <b>distant</b> = none of the above.</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">§3 · announce — Seal A speaks its signature on every rung</div>
+    <div class="rungs" id="rungs"></div>
+  </section>
+
+  <section>
+    <div class="eyebrow">§4 · reproduce at a distance — the deck rides the ladder</div>
+    <p style="color:var(--dim);font-size:13.5px">Seal A's entire deck is chunked into ladder frames, voiced (light-flashed on the lamp below), the far-side re-folds it, and the fold-signature must match exactly. Tamper any frame → the content-address catches it.</p>
+    <div class="row">
+      <button class="big" id="repro">▶ Reproduce Seal A over light</button>
+      <button id="tamper">flip one bit → prove the teeth</button>
+    </div>
+    <div class="rung" style="margin-top:12px"><div class="lamp" id="repro-lamp"></div><div class="carrier" id="repro-frames">idle</div><div id="repro-proof" class="proof">—</div></div>
+  </section>
+
+  <section>
+    <div class="eyebrow">§5 · diagnose — Seal A hears its own shadow</div>
+    <div class="diag" id="diag"></div>
+  </section>
+
+  <footer>
+    §27+ · <span class="note">喉 · the throat</span> — the Seal gains transmission across the fold-rate ladder<br>
+    the ladder is the voice · <a href="https://sjgant80-hub.github.io/one-ladder/">one-ladder</a> · the sound rung sung: <a href="https://sjgant80-hub.github.io/mesh-sings/">mesh-sings</a> · <a href="https://github.com/sjgant80-hub/the-throat">source</a><br>
+    one encode / one decode · proven-round-trip · sovereign on every rung — no ISP, no cable, no cloud
+  </footer>
+</div>
+
+<script type="module">
+import { seal, announce, hearAnnounce, recognize, transmit, receive, reproduce, diagnose, FUNCTIONS } from './throat.mjs';
+import { RUNGS, light } from './ladder.mjs';
+
+// ── two editors + presets that yield distinct verdicts (spectra chosen so the classifier gets exercised) ──
+const PRESETS = {
+  witness:   'verify the proof\nwitness the gate, check the key, close the wall\ntest · audit · konomify · adversary\nassert it is reproducible, stop the leak',
+  broadcast: 'transmit and broadcast the message\nsend the api and mcp sdk over the stream and the mesh\nthe core engine kernel and vault remember the state\nbuild the spec, design the scaffold, wire the plan\nown the seed, sign the sovereign identity, mint the fork',
+  planA:     'build build build the spec, design the scaffold, wire the plan roadmap\nsignal signal signal · transmit and broadcast the message over the mesh api mcp sdk\nsignal signal signal · route the stream, publish, send',
+  planB:     'build build build the spec, design the scaffold, wire the plan structure\ngate the access, key the lock, allow, admit — the toll opens\ngate gate gate · redress at the toll · key the lock again',
+  toll:      'the-toll is a proof-of-work edge wall\nit forces execution not storage\nverify with a witness, konomify, audit',
+};
+
+function editor(id, initialKey){
+  const preset = PRESETS[initialKey];
+  document.getElementById(id).innerHTML = `
+    <h3><span>${id === 'editorA' ? 'Seal A' : 'Seal B'}</span><span class="sig" data-sig>—</span></h3>
+    <textarea data-deck spellcheck="false">${preset}</textarea>
+    <div class="presets">${Object.keys(PRESETS).map(k=>`<span data-p="${k}">${k}</span>`).join('')}</div>
+    <svg class="chord-svg" data-chord viewBox="0 0 700 120" preserveAspectRatio="none"></svg>`;
+  const el = document.getElementById(id);
+  el.querySelector('textarea').addEventListener('input', render);
+  el.querySelectorAll('[data-p]').forEach(b => b.onclick = () => { el.querySelector('textarea').value = PRESETS[b.dataset.p]; render(); });
+  return el;
+}
+editor('editorA', 'witness');
+editor('editorB', 'broadcast');
+
+// ── the ladder rung cards ──
+const RUNG_META = [
+  { k:'sound', title:'Sound', dot:'var(--amber)', meta:'matter · pentatonic pitch · a human ear', btn:'▶ Sing it' },
+  { k:'radio', title:'Radio', dot:'var(--teal)',  meta:'field · FSK on a carrier · reach', btn:'▶ Transmit' },
+  { k:'light', title:'Light', dot:'var(--violet)',meta:'field · OOK on/off · beam · speed', btn:'▶ Flash' },
+];
+document.getElementById('rungs').innerHTML = RUNG_META.map(r => `
+  <div class="rung" data-k="${r.k}">
+    <h4><span class="dot" style="background:${r.dot}"></span>${r.title}</h4>
+    <div class="meta">${r.meta}</div>
+    ${r.k==='light'?'<div class="lamp" data-lamp></div>':''}
+    <button data-play="${r.k}">${r.btn}</button>
+    <div class="carrier" data-carrier>—</div>
+    <div class="proof" data-proof>—</div>
+  </div>`).join('');
+
+// ── WebAudio ──
+let AC; const ac = () => { if(!AC) AC = new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume(); return AC; };
+function tone(hz, when, dur, {type='triangle', gain=0.15}={}){
+  const c = ac(), o = c.createOscillator(), g = c.createGain(), t = c.currentTime + when;
+  o.type = type; o.frequency.value = hz;
+  g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(gain,t+0.015); g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+  o.connect(g).connect(c.destination); o.start(t); o.stop(t+dur+0.04);
+}
+
+// ── draw a chord (7 bars, one per function; loud=gold, quiet=dim, dead=red) ──
+function drawChord(svgEl, chord){
+  const W = 700, H = 120, bw = W/7, gap = 12;
+  const bars = chord.map((amp, i) => {
+    const h = Math.max(2, amp * (H - 34));
+    const y = (H - 22) - h;
+    const cls = amp < 0.12 ? 'bar dead' : (amp < 0.3 ? 'bar dim' : 'bar');
+    return `<rect class="${cls}" x="${i*bw+gap/2}" y="${y}" width="${bw-gap}" height="${h}" rx="4"/>
+            <text class="axis-amp" x="${i*bw + bw/2}" y="${y - 4}">${amp.toFixed(2)}</text>
+            <text class="axis-label" x="${i*bw + bw/2}" y="${H - 6}">${FUNCTIONS[i]}</text>`;
+  }).join('');
+  svgEl.innerHTML = bars;
+}
+
+// ── the whole render loop ──
+let A, B, lastAnnounce;
+function render(){
+  const decksA = document.querySelector('#editorA textarea').value.split('\n').filter(x=>x.length);
+  const decksB = document.querySelector('#editorB textarea').value.split('\n').filter(x=>x.length);
+  A = seal(decksA.length ? decksA : ['(empty)']);
+  B = seal(decksB.length ? decksB : ['(empty)']);
+  document.querySelector('#editorA [data-sig]').textContent = 'sig ' + A.sig.hex;
+  document.querySelector('#editorB [data-sig]').textContent = 'sig ' + B.sig.hex;
+  drawChord(document.querySelector('#editorA [data-chord]'), A.chord);
+  drawChord(document.querySelector('#editorB [data-chord]'), B.chord);
+
+  // recognize
+  const r = recognize(A, B);
+  const vEl = document.querySelector('#verdict');
+  vEl.innerHTML = `<div class="v ${r.verdict}">${r.verdict}</div><div class="m">kinship ${r.kinship} · complement ${r.complement} · overlap-loud ${r.overlapLoud}</div>`;
+
+  // announce — voice Seal A on each rung + live round-trip proof
+  const rungs = document.querySelectorAll('#rungs .rung');
+  rungs.forEach(el => {
+    const k = el.dataset.k;
+    const a = announce(A, k); lastAnnounce = a;
+    const heard = hearAnnounce(a.carried, k);
+    let desc;
+    if (k === 'sound')     desc = a.carried.map(hz => Math.round(hz) + 'Hz').join(' ');
+    else if (k === 'radio')desc = a.carried.map(hz => Math.round(hz) + 'Hz').join(' ');
+    else                   desc = 'bits: ' + a.carried.join('');
+    el.querySelector('[data-carrier]').textContent = desc;
+    const p = el.querySelector('[data-proof]');
+    const ok = heard.ok && heard.n === A.sig.lo;
+    p.className = 'proof' + (ok ? '' : ' bad');
+    p.innerHTML = ok ? `<span>signature recovered</span> <b>0x${A.sig.lo.toString(16).padStart(8,'0')} ✓</b>` : '<b>decode failed</b>';
+  });
+
+  // diagnose
+  const d = diagnose(A);
+  const diagEl = document.getElementById('diag');
+  diagEl.innerHTML = `
+    <div class="k">resolves?</div>              <div class="v" style="color:${d.resolves?'var(--green)':'var(--red)'}">${d.resolves ? 'yes — the Seal holds' : 'no — the Seal sounds wrong'}</div>
+    <div class="k">shadow (weakest axis)</div>  <div class="v">${d.shadow} @ ${d.shadowAmp.toFixed(2)}</div>
+    <div class="k">dominance (top axis / sum)</div><div class="v">${d.top.toFixed(2)}</div>`;
+  if (d.flags.length) diagEl.innerHTML += d.flags.map(f => `<div style="grid-column:1/-1" class="flag">${f}</div>`).join('');
+  else diagEl.innerHTML += `<div style="grid-column:1/-1" class="flag ok">no flags · a whole chord</div>`;
+}
+
+// play a rung — sound = melody, radio = FSK beeps, light = flash the lamp on any card that has one
+function play(k){
+  const carrier = RUNGS[k].voice(lastAnnounce.pattern);
+  if (k === 'sound') carrier.forEach((hz,i) => tone(hz, i*0.19, 0.17, {type:'triangle', gain:0.16}));
+  else if (k === 'radio') carrier.forEach((f,i) => tone(f, i*0.15, 0.12, {type:'square', gain:0.09}));
+  else flashLight(document.querySelector('#rungs [data-k="light"] [data-lamp]'), light.voice(lastAnnounce.pattern));
+}
+function flashLight(lamp, bits){
+  const step = 70;
+  bits.forEach((b,i) => setTimeout(() => {
+    lamp.style.background = b ? 'var(--violet)' : '#04050b';
+    lamp.style.boxShadow = b ? '0 0 22px var(--violet)' : 'none';
+    if (b) tone(2200, 0, 0.03, {type:'sine', gain:0.05});
+  }, i*step));
+  setTimeout(() => { lamp.style.background = '#04050b'; lamp.style.boxShadow = 'none'; }, bits.length*step + 120);
+}
+document.getElementById('rungs').addEventListener('click', e => { const b = e.target.closest('[data-play]'); if (b) play(b.dataset.play); });
+
+// reproduce over light — chunk A's deck into frames, flash them, re-fold + verify. Optional tamper.
+let tamperNext = false;
+document.getElementById('tamper').onclick = () => { tamperNext = true; document.getElementById('repro-proof').textContent = 'next reproduction will flip one bit'; document.getElementById('repro-proof').className = 'proof bad'; };
+document.getElementById('repro').onclick = () => {
+  const t = transmit(A);
+  if (tamperNext) { t.frames[Math.min(2, t.frames.length-1)][4] = (t.frames[Math.min(2, t.frames.length-1)][4] + 1) & 0xf; }
+  const bits = t.frames.flatMap(f => light.voice(f));
+  document.getElementById('repro-frames').textContent = `${t.frames.length} ladder frames · ${bits.length} light pulses · signature to match: 0x${A.sig.hex}`;
+  flashLight(document.getElementById('repro-lamp'), bits.slice(0, 480));   // cap the visual so long decks don't run forever
+  const r = receive(t.frames);
+  const p = document.getElementById('repro-proof');
+  const ok = r.ok && r.seal.sig.hex === A.sig.hex;
+  p.className = 'proof' + (ok ? '' : ' bad');
+  p.innerHTML = ok
+    ? `<b>signature MATCHES at the far side</b> → 0x${r.seal.sig.hex} ✓ · a Seal has reproduced across a beam`
+    : `<b>far-side did not re-fold A</b> → ${r.ok ? '0x' + r.seal.sig.hex : r.why} · the content-address caught the tamper`;
+  tamperNext = false;
+};
+
+// theme
+const root = document.documentElement;
+document.getElementById('theme').onclick = () => { const cur = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark'); };
+
+render();
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(() => {});
+</script>
+</body>
+</html>
